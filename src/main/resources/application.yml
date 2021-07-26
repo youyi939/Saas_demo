@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://www.cjlly.com:3306/test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
