@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 /**
  * @Author: KenChen
@@ -13,8 +15,10 @@ import lombok.Data;
 @ApiModel("用户实体类，面向内部")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @TableName("user")
 public class User {
+
     private Long id;
     private String name;
     private Integer age;

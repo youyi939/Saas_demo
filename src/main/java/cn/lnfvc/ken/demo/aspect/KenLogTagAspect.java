@@ -101,7 +101,6 @@ public class KenLogTagAspect {
 
         System.out.println("\033[31;4m"+"注解描述："+syslog.value()+"\n"
                 +"请求方法名："+className+","+methodName+" 方法执行时间："+time+ "\033[0m");
-        System.out.println(kenLog.toString());
 
         logService.save(kenLog);
     }

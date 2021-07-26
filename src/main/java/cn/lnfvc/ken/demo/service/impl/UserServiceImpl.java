@@ -1,13 +1,18 @@
 package cn.lnfvc.ken.demo.service.impl;
 
+import cn.lnfvc.ken.demo.entity.dto.UserDTO;
 import cn.lnfvc.ken.demo.mapper.UserMapper;
 import cn.lnfvc.ken.demo.entity.pojo.User;
 import cn.lnfvc.ken.demo.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.jws.soap.SOAPBinding;
+import java.util.ArrayList;
 
 /**
  * @Author: KenChen
@@ -31,6 +36,65 @@ public class UserServiceImpl implements UserService {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         Page<User> userPage = userMapper.selectPage(page,queryWrapper);
         return userPage;
+    }
+
+    /**
+     * 新建用户
+     * @param userAddDTO
+     */
+    @Override
+    public void save(UserDTO userAddDTO) {
+        User user = new User();
+        BeanUtils.copyProperties(userAddDTO,user);
+        userMapper.insert(user);
+    }
+
+    /**
+     * 根据ID更新用户信息
+     * @param userDTO
+     */
+    @Override
+    public void updateById(UserDTO userDTO) {
+
+    }
+
+    /**
+     * 根据ID查询用户
+     * @param id
+     * @return
+     */
+    @Override
+    public User getById(Integer id) {
+        return null;
+    }
+
+    /**
+     * 根据ID删除用户
+     * @param id
+     */
+    @Override
+    public void removeById(Integer id) {
+
+    }
+
+    /**
+     * 根据IDS，批量删除用户
+     * @param ids
+     */
+    @Override
+    public void removeByIds(ArrayList<Integer> ids) {
+
+    }
+
+    /**
+     * 根据IDS，批量查询用户
+     * @param page
+     * @param ids
+     * @return
+     */
+    @Override
+    public IPage<User> pageByIds(Page<User> page, ArrayList<Integer> ids) {
+        return null;
     }
 
 }

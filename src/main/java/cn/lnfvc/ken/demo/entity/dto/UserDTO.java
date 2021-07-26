@@ -1,19 +1,32 @@
 package cn.lnfvc.ken.demo.entity.dto;
 
+import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NonNull;
+import lombok.experimental.Accessors;
 
 /**
  * @Author: KenChen
  * @Description: User的数据传输类
  * @Date: Create in  2021/7/25 下午5:25
  */
-@ApiModel("User的DTO类，面向外部")
+
 @Data
 @AllArgsConstructor
+@ApiModel(value = "User的Add DTO类，面向外部")
 public class UserDTO {
-    private Long id;
+
+    @ApiModelProperty("用户名称")
     private String name;
-    private Integer sort;
+
+    @ApiModelProperty("用户年龄")
+    private int age;
+
+
+    @ApiModelProperty("用户Email")
+    private String email;
+
 }

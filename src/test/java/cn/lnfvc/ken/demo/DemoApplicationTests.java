@@ -57,7 +57,7 @@ class DemoApplicationTests {
 
     @Test
     public void beanUtilsTest(){
-       UserDTO userDTO = new UserDTO((long) 1,"ken1",10);
+       UserDTO userDTO = new UserDTO("ken",21,"456.com");
        User user = new User((long) 1,"ken",21,"123.com");
 
         System.out.println(userDTO.toString());
