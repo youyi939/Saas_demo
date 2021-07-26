@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @Author: KenChen
- * @Description:
+ * @Description: mybatis-plus 分页插件
  * @Date: Create in  2021/7/26 上午10:02
  */
 

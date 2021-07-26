@@ -14,7 +14,7 @@ import java.util.Collections;
 
 /**
  * @Author: KenChen
- * @Description:
+ * @Description: swagger配置
  * @Date: Create in  2021/7/26 上午10:23
  */
 @Configuration

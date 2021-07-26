@@ -1,4 +1,4 @@
-package cn.lnfvc.ken.demo.pojo;
+package cn.lnfvc.ken.demo.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;

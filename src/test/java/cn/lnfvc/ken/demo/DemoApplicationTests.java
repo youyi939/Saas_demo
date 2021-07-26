@@ -1,12 +1,10 @@
 package cn.lnfvc.ken.demo;
 
 import cn.lnfvc.ken.demo.mapper.UserMapper;
-import cn.lnfvc.ken.demo.pojo.User;
-import cn.lnfvc.ken.demo.pojo.dto.UserDTO;
+import cn.lnfvc.ken.demo.entity.pojo.User;
+import cn.lnfvc.ken.demo.entity.dto.UserDTO;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

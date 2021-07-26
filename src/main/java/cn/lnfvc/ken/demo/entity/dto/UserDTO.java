@@ -1,4 +1,4 @@
-package cn.lnfvc.ken.demo.pojo.dto;
+package cn.lnfvc.ken.demo.entity.dto;
 
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 /**
  * @Author: KenChen
- * @Description:
+ * @Description: User的数据传输类
  * @Date: Create in  2021/7/25 下午5:25
  */
 @ApiModel("User的DTO类，面向外部")
