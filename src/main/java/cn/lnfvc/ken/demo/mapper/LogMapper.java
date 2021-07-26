@@ -15,6 +15,8 @@ import java.util.List;
  */
 @Mapper
 public interface LogMapper extends BaseMapper<KenLog> {
-    @Select("select * from ken_log  username  like concat ('%',#{username},'%') or operation LIKE concat ('%',#{operation},'%') or method like concat ('%',#{method},'%'))")
+
+    @Select("select * from ken_log where username  like concat ('%',#{username},'%') or operation LIKE concat ('%',#{operation},'%') or method like concat ('%',#{method},'%')")
     List<KenLog> selectByLike(@Param("username") String username, @Param("operation") String operation, @Param("method") String method);
+
 }
