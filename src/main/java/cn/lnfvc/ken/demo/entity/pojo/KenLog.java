@@ -39,4 +39,7 @@ public class KenLog {
     @ApiModelProperty(value = "创建时间")
     private Date createDate;
 
+    @ApiModelProperty(value = "ipAndPort")
+    private String ip;
+
 }

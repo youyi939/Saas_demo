@@ -4,6 +4,7 @@ import cn.lnfvc.ken.demo.annotation.KenLogTag;
 import cn.lnfvc.ken.demo.entity.pojo.KenLog;
 import cn.lnfvc.ken.demo.service.LogService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.xml.internal.ws.client.ResponseContext;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -11,7 +12,13 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.context.request.ServletWebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 import java.util.Date;
 
@@ -89,6 +96,10 @@ public class KenLogTagAspect {
             kenLog.setParams(params);
         }
 
+        //获取网络相关信息
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        String ip = request.getHeader("Host");
+
 
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = signature.getName();
@@ -98,8 +109,11 @@ public class KenLogTagAspect {
         kenLog.setTime(time);
         kenLog.setUuid("");
         kenLog.setUsername("guest");
+        kenLog.setIp(ip);
 
-        System.out.println("\033[31;4m"+"注解描述："+syslog.value()+"\n"
+        System.out.println("\033[31;4m"
+                + "注解描述："+syslog.value()+"\n"
+                +"服务端IP："+ip+"\n"
                 +"请求方法名："+className+","+methodName+" 方法执行时间："+time+ "\033[0m");
 
         logService.save(kenLog);
