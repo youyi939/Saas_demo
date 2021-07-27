@@ -1,7 +1,10 @@
 package cn.lnfvc.ken.demo.entity.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,8 +22,15 @@ import org.springframework.lang.Nullable;
 @TableName("user")
 public class User {
 
-    private Long id;
+    @TableId(type = IdType.AUTO)
+    private Integer id;
+
+    @ApiModelProperty("用户名")
     private String name;
+
+    @ApiModelProperty("年龄")
     private Integer age;
+
+    @ApiModelProperty("邮箱地址")
     private String email;
 }

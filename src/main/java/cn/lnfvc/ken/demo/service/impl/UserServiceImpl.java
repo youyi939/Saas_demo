@@ -1,6 +1,7 @@
 package cn.lnfvc.ken.demo.service.impl;
 
 import cn.lnfvc.ken.demo.entity.dto.UserDTO;
+import cn.lnfvc.ken.demo.entity.dto.UserUpdateDTO;
 import cn.lnfvc.ken.demo.mapper.UserMapper;
 import cn.lnfvc.ken.demo.entity.pojo.User;
 import cn.lnfvc.ken.demo.service.UserService;
@@ -46,16 +47,19 @@ public class UserServiceImpl implements UserService {
     public void save(UserDTO userAddDTO) {
         User user = new User();
         BeanUtils.copyProperties(userAddDTO,user);
+        System.out.println("User信息："+user.toString());
         userMapper.insert(user);
     }
 
     /**
      * 根据ID更新用户信息
-     * @param userDTO
+     * @param userUpdateDTO
      */
     @Override
-    public void updateById(UserDTO userDTO) {
-
+    public void updateById(UserUpdateDTO userUpdateDTO) {
+        User user = userMapper.selectById(userUpdateDTO.getId());
+        BeanUtils.copyProperties(userUpdateDTO,user);
+        userMapper.updateById(user);
     }
 
     /**
@@ -73,8 +77,10 @@ public class UserServiceImpl implements UserService {
      * @param id
      */
     @Override
-    public void removeById(Integer id) {
-
+    public void removeById(int id) {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(User::getId,id);
+        userMapper.delete(queryWrapper);
     }
 
     /**
@@ -83,7 +89,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void removeByIds(ArrayList<Integer> ids) {
-
+        userMapper.deleteBatchIds(ids);
     }
 
     /**
