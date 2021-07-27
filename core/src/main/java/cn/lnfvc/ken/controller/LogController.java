@@ -1,6 +1,8 @@
 package cn.lnfvc.ken.controller;
 
+import cn.lnfvc.ken.annotation.KenLogTag;
 import cn.lnfvc.ken.entity.CommonResult;
+import cn.lnfvc.ken.pojo.KenLog;
 import cn.lnfvc.ken.service.LogService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -26,13 +28,13 @@ public class LogController {
 
     //此注解用于解释参数
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "current",value = "分页页数",dataType = "Integer",paramType = "query",required = true),
-            @ApiImplicitParam(name = "size",value = "每页数据条数",dataType = "Integer",paramType = "query")
+            @ApiImplicitParam(name = "current",value = "分页页数",dataType = "int",paramType = "query",required = true),
+            @ApiImplicitParam(name = "size",value = "每页数据条数",dataType = "int",paramType = "query",required = true)
     })
-    @ApiOperation(value = "分页查询日志",notes = "")
+    @ApiOperation(value = "分页查询日志")
     @GetMapping(value = "/api/log/selectLogPage")
     public CommonResult selectLogPage(@RequestParam(name = "current") Integer current, @RequestParam(name = "size") Integer size){
-        return CommonResult.ok("分页查询日志成功").putDate(logService.page(new Page<>(current,size)));
+        return CommonResult.ok("分页查询日志成功").putDate((Page<KenLog>)logService.page(new Page<KenLog>(current,size)));
     }
 
 

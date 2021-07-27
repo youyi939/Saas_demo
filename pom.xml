@@ -12,6 +12,7 @@
         <module>Payment9092</module>
         <module>core</module>
         <module>cloud-api-commons</module>
+        <module>Order8082</module>
     </modules>
 
 

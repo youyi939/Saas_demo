@@ -1,5 +1,7 @@
 package cn.lnfvc.ken.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -16,6 +18,10 @@ import java.util.Date;
 @Data
 @ApiModel("日志实体类")
 public class KenLog {
+
+    @TableId(type = IdType.AUTO)
+    @ApiModelProperty(value = "id")
+    private int id;
 
     @ApiModelProperty(value = "操作人")
     private String username;
