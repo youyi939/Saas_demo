@@ -1,10 +1,10 @@
 package cn.lnfvc.ken.controller;
 
 import cn.lnfvc.ken.annotation.KenLogTag;
+import cn.lnfvc.ken.entity.CommonResult;
 import cn.lnfvc.ken.entity.dto.UserDTO;
 import cn.lnfvc.ken.entity.dto.UserUpdateDTO;
 import cn.lnfvc.ken.entity.pojo.User;
-import cn.lnfvc.ken.entity.vo.CommonResult;
 import cn.lnfvc.ken.service.UserService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;

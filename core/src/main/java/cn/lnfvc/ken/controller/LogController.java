@@ -1,6 +1,6 @@
 package cn.lnfvc.ken.controller;
 
-import cn.lnfvc.ken.entity.vo.CommonResult;
+import cn.lnfvc.ken.entity.CommonResult;
 import cn.lnfvc.ken.service.LogService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;

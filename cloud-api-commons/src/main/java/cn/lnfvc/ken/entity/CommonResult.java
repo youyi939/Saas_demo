@@ -1,6 +1,5 @@
-package cn.lnfvc.ken.entity.vo;
+package cn.lnfvc.ken.entity;
 
-import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,6 @@ import lombok.NoArgsConstructor;
  * @Date: Create in  2021/7/26 上午10:26
  */
 
-@ApiModel("通用返回对象")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
