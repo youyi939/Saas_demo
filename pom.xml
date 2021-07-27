@@ -10,6 +10,7 @@
 
     <modules>
         <module>Payment9092</module>
+        <module>core</module>
     </modules>
 
 
