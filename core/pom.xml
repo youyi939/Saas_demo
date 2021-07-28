@@ -33,8 +33,6 @@
             <version>3.4.2</version>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -55,10 +53,13 @@
             <version>2.9.2</version>
         </dependency>
 
+<!--        AOP核心包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+
+<!--        自定义公共包-->
         <dependency>
             <groupId>cn.lnfvc.ken</groupId>
             <artifactId>cloud-api-commons</artifactId>
