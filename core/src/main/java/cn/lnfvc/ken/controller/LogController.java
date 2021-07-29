@@ -49,7 +49,4 @@ public class LogController {
         return CommonResult.ok("模糊查询成功").putDate(logService.findByNameOrOperationOrMethod(username,operation,method));
     }
 
-
-
-
 }

@@ -38,6 +38,7 @@ public class LogServiceImpl implements LogService {
     @Override
     public IPage<KenLog> page(Page<KenLog> page) {
         QueryWrapper<KenLog> queryWrapper = new QueryWrapper<>();
+        queryWrapper.orderByDesc("id");
         Page<KenLog> kenLogPage = logMapper.selectPage(page,queryWrapper);
         return  kenLogPage;
     }

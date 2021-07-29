@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -30,8 +31,18 @@ public class OrderController {
     @KenLogTag("Order调用根据ID获取用户接口")
     @GetMapping(value = "/consumer/public/user/{id}")
     public CommonResult selectById(@PathVariable int id){
-        System.out.println(serverUrl);
         return restTemplate.getForObject(serverUrl+"/public/user/"+id,CommonResult.class);
     }
+
+    @ApiOperation("Order调用分页获取用户列表接口")
+    @KenLogTag("Order调用分页获取用户列表接口")
+    @GetMapping(value = "/consumer/public/user")
+    public CommonResult selectUserPage(@RequestParam(name = "current") Integer current, @RequestParam(name = "size") Integer size){
+        return restTemplate.getForObject(serverUrl+"/public/user?current="+current+"&size="+size,CommonResult.class);
+    }
+
+
+
+
 
 }

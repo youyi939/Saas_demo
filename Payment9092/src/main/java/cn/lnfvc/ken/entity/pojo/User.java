@@ -1,7 +1,9 @@
 package cn.lnfvc.ken.entity.pojo;
 
+import cn.lnfvc.ken.pojo.BaseEntity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -19,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("user")
-public class User {
+public class User extends BaseEntity {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
