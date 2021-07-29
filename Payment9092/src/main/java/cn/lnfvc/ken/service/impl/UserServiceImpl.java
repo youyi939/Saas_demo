@@ -1,14 +1,11 @@
 package cn.lnfvc.ken.service.impl;
 
-import cn.lnfvc.ken.entity.dto.UserDTO;
-import cn.lnfvc.ken.entity.dto.UserUpdateDTO;
 import cn.lnfvc.ken.entity.pojo.User;
 import cn.lnfvc.ken.mapper.UserMapper;
 import cn.lnfvc.ken.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,24 +37,20 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 新建用户
-     * @param userAddDTO
+     * @param user
      */
     @Override
-    public void save(UserDTO userAddDTO) {
-        User user = new User();
-        BeanUtils.copyProperties(userAddDTO,user);
-        System.out.println("User信息："+user.toString());
+    public void save(User user) {
+
         userMapper.insert(user);
     }
 
     /**
      * 根据ID更新用户信息
-     * @param userUpdateDTO
+     * @param
      */
     @Override
-    public void updateById(UserUpdateDTO userUpdateDTO) {
-        User user = userMapper.selectById(userUpdateDTO.getId());
-        BeanUtils.copyProperties(userUpdateDTO,user);
+    public void updateById(User user) {
         userMapper.updateById(user);
     }
 

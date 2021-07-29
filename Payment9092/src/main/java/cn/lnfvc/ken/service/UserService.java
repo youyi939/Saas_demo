@@ -1,7 +1,5 @@
 package cn.lnfvc.ken.service;
 
-import cn.lnfvc.ken.entity.dto.UserDTO;
-import cn.lnfvc.ken.entity.dto.UserUpdateDTO;
 import cn.lnfvc.ken.entity.pojo.User;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -26,15 +24,15 @@ public interface UserService {
 
     /**
      * 新建用户
-     * @param userAddDTO
+     * @param user
      */
-    void save(UserDTO userAddDTO);
+    void save(User user);
 
     /**
      * 根据ID更新用户信息
-     * @param userUpdateDTO
+     * @param user
      */
-    void updateById(UserUpdateDTO userUpdateDTO);
+    void updateById(User user);
 
     /**
      * 根据ID查询用户

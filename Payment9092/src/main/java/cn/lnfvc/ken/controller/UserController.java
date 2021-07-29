@@ -2,8 +2,6 @@ package cn.lnfvc.ken.controller;
 
 import cn.lnfvc.ken.annotation.KenLogTag;
 import cn.lnfvc.ken.entity.CommonResult;
-import cn.lnfvc.ken.entity.dto.UserDTO;
-import cn.lnfvc.ken.entity.dto.UserUpdateDTO;
 import cn.lnfvc.ken.entity.pojo.User;
 import cn.lnfvc.ken.service.UserService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -43,8 +41,8 @@ public class UserController {
     @ApiOperation("新建用户")
     @KenLogTag("新建用户")
     @PostMapping(value = "/public/user")
-    public CommonResult save(@RequestBody UserDTO userDTO){
-        userService.save(userDTO);
+    public CommonResult save(@RequestBody User user){
+        userService.save(user);
         return CommonResult.ok("新建用户成功");
     }
 
@@ -52,8 +50,8 @@ public class UserController {
     @ApiOperation("根据ID更新用户信息")
     @KenLogTag("根据ID更新用户信息")
     @PutMapping(value = "/public/user")
-    public CommonResult update(@RequestBody UserUpdateDTO userUpdateDTO){
-        userService.updateById(userUpdateDTO);
+    public CommonResult update(@RequestBody User user){
+        userService.updateById(user);
         return CommonResult.ok("更新用户信息成功");
     }
 
