@@ -59,14 +59,6 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
-<!--        自定义公共包-->
-        <dependency>
-            <groupId>cn.lnfvc.ken</groupId>
-            <artifactId>cloud-api-commons</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
 
 </project>

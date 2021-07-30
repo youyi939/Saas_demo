@@ -1,4 +1,4 @@
-package cn.lnfvc.commons.entity;
+package cn.lnfvc.core.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

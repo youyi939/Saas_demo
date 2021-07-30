@@ -1,6 +1,6 @@
 package cn.lnfvc.core.mapper;
 
-import cn.lnfvc.commons.entity.KenLog;
+import cn.lnfvc.core.pojo.KenLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

@@ -1,7 +1,7 @@
 package cn.lnfvc.core.aspect;
 
 import cn.lnfvc.core.annotation.KenLogTag;
-import cn.lnfvc.commons.entity.KenLog;
+import cn.lnfvc.core.pojo.KenLog;
 import cn.lnfvc.core.service.LogService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.aspectj.lang.ProceedingJoinPoint;

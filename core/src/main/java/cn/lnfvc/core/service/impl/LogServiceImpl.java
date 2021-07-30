@@ -1,7 +1,7 @@
 package cn.lnfvc.core.service.impl;
 
 import cn.lnfvc.core.mapper.LogMapper;
-import cn.lnfvc.commons.entity.KenLog;
+import cn.lnfvc.core.pojo.KenLog;
 import cn.lnfvc.core.service.LogService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
