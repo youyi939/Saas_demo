@@ -5,10 +5,12 @@ import cn.lnfvc.commons.entity.CommonResult;
 import cn.lnfvc.commons.entity.User;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,6 +58,31 @@ public class OrderController {
     }
 
 
+    @ApiOperation("Order调用批量删除用户")
+    @KenLogTag("Order调用批量删除用户")
+    @DeleteMapping(value = "/consumer/public/user")
+    public CommonResult removeByIds(@RequestBody ArrayList<Integer> ids){
+        String url = serverUrl+"/public/user/removeByIds";
+        return restTemplate.postForObject(url,ids,CommonResult.class);
+    }
+
+
+    @ApiOperation("Order调用根据ID删除用户")
+    @KenLogTag("Order调用根据ID删除用户")
+    @DeleteMapping(value = "consumer/public/user/{id}")
+    public CommonResult removeById(@PathVariable int id){
+        String url = serverUrl+"/public/user/"+id;
+        return restTemplate.postForObject(url,null,CommonResult.class);
+    }
+
+
+    @ApiOperation("Order调用根据ID更新用户信息")
+    @KenLogTag("Order调用根据ID更新用户信息")
+    @PutMapping(value = "/consumer/public/user")
+    public CommonResult update(@RequestBody User user){
+        String url = serverUrl+"/public/user/update";
+        return restTemplate.postForObject(url,user,CommonResult.class);
+    }
 
 
 }

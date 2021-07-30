@@ -49,7 +49,7 @@ public class UserController {
 
     @ApiOperation("根据ID更新用户信息")
     @KenLogTag("根据ID更新用户信息")
-    @PutMapping(value = "/public/user")
+    @PostMapping(value = "/public/user/update")
     public CommonResult update(@RequestBody User user){
         userService.updateById(user);
         return CommonResult.ok("更新用户信息成功");
@@ -58,7 +58,7 @@ public class UserController {
 
     @ApiOperation("根据ID删除用户")
     @KenLogTag("删除用户")
-    @DeleteMapping(value = "/public/user/{id}")
+    @PostMapping(value = "/public/user/{id}")
     public CommonResult removeById(@PathVariable int id){
         userService.removeById(id);
         return CommonResult.ok("删除用户成功");
@@ -67,7 +67,7 @@ public class UserController {
 
     @ApiOperation("批量删除用户")
     @KenLogTag("批量删除用户")
-    @DeleteMapping(value = "/public/user")
+    @PostMapping(value = "/public/user/removeByIds")
     public CommonResult removeByIds(@RequestBody ArrayList<Integer> ids){
         userService.removeByIds(ids);
         return CommonResult.ok("删除用户成功");
