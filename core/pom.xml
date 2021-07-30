@@ -29,9 +29,9 @@
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.4.2</version>
-        </dependency>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>3.4.2</version>
+    </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
