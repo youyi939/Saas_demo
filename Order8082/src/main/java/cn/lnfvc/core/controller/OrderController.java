@@ -5,10 +5,8 @@ import cn.lnfvc.commons.entity.CommonResult;
 import cn.lnfvc.commons.entity.User;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
