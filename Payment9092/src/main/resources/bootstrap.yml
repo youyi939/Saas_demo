@@ -2,11 +2,7 @@ server:
   port: 9092
 
 spring:
-  datasource:
-    username: root
-    url: jdbc:mysql://www.cjlly.com:3306/test
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 123456
+
   application:
     name: nacos-payment-service                 #服务名
   cloud:
@@ -15,7 +11,7 @@ spring:
         server-addr: 127.0.0.1:8848             #注册进nacos
       config:
         server-addr: 127.0.0.1:8848             #注册进nacos
-        file-extension: yaml
+        file-extension: yml
 
 mybatis-plus:
   configuration:

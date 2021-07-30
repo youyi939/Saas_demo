@@ -5,6 +5,7 @@ import cn.lnfvc.commons.entity.CommonResult;
 import cn.lnfvc.commons.entity.User;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
@@ -18,6 +19,7 @@ import java.util.Map;
  * @Date: Create in  2021/7/27 下午4:10
  */
 @RestController
+@RefreshScope
 public class OrderController {
 
 
