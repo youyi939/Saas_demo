@@ -5,6 +5,7 @@
 * 持久层：mybatis-plus Mysql
 * 服务注册中心：Nacos
 * 接口文档：Swagger2
+* 配置中心: NacosConfig
 
 ***
 #### 模块说明
