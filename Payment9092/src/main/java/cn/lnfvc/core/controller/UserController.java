@@ -4,6 +4,7 @@ import cn.lnfvc.core.annotation.KenLogTag;
 import cn.lnfvc.commons.entity.CommonResult;
 import cn.lnfvc.commons.entity.User;
 import cn.lnfvc.core.service.UserService;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

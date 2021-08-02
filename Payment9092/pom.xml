@@ -14,6 +14,13 @@
 
     <dependencies>
 
+        <!--SpringCloud ailibaba sentinel -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+
 <!--        naocs-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -26,6 +33,8 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
+
+<!--        测试-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -33,6 +42,7 @@
         </dependency>
 
 
+<!--        通用公共包-->
         <dependency>
             <groupId>cn.lnfvc.ken</groupId>
             <artifactId>core</artifactId>

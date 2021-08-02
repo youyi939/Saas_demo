@@ -2,9 +2,6 @@ server:
   port: 9092
 
 spring:
-
-  application:
-    name: nacos-payment-service                 #服务名
   cloud:
     nacos:
       discovery:
@@ -12,6 +9,11 @@ spring:
       config:
         server-addr: www.cjlly.com:8848             #注册进nacos
         file-extension: yml
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+          #默认为8719端口，如被占用则会+1扫描，直至找到未被占用的端口
+        port: 8719
 
 mybatis-plus:
   configuration:
