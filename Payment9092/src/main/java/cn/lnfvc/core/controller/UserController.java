@@ -3,6 +3,7 @@ package cn.lnfvc.core.controller;
 import cn.lnfvc.core.annotation.KenLogTag;
 import cn.lnfvc.commons.entity.CommonResult;
 import cn.lnfvc.commons.entity.User;
+import cn.lnfvc.core.blockhandler.PaymentBlockHandler;
 import cn.lnfvc.core.service.UserService;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -35,6 +36,10 @@ public class UserController {
     })
     @KenLogTag("分页获取用户列表")
     @ApiOperation("分页查询用户列表")
+    @SentinelResource(value = "ken",
+            blockHandlerClass = PaymentBlockHandler.class,
+            blockHandler = "globalHandlerException"
+    )
     @GetMapping(value = "/public/user")
     public CommonResult<Page<User>> selectUserPage(@RequestParam(name = "current") Integer current, @RequestParam(name = "size") Integer size){
         return CommonResult.ok("分页查询成功").putDate((Page<User>) userService.page(new Page<User>(current,size)));
@@ -83,6 +88,5 @@ public class UserController {
     public CommonResult selectById(@PathVariable int id){
         return CommonResult.ok("获取用户成功").putDate(userService.getById(id));
     }
-
 
 }
