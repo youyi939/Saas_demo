@@ -41,6 +41,13 @@ public interface UserService {
     User getById(Integer id);
 
     /**
+     * 根据用户名查询用户
+     * @param name
+     * @return
+     */
+    User getByName(String name);
+
+    /**
      * 根据ID删除用户
      * @param id
      */

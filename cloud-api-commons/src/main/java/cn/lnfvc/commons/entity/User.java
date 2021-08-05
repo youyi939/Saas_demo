@@ -3,6 +3,7 @@ package cn.lnfvc.commons.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -32,4 +33,7 @@ public class User extends BaseEntity {
 
     @ApiModelProperty("邮箱地址")
     private String email;
+
+    @ApiModelProperty("用户密码")
+    private String password;
 }

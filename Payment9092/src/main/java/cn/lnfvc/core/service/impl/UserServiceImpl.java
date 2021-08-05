@@ -63,6 +63,13 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectById(id);
     }
 
+    @Override
+    public User getByName(String name) {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(User::getName,name);
+        return userMapper.selectOne(queryWrapper);
+    }
+
     /**
      * 根据ID删除用户
      * @param id
