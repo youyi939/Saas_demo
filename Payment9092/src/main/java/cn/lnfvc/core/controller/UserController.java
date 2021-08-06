@@ -83,5 +83,12 @@ public class UserController {
         return CommonResult.ok("获取用户成功").putDate(userService.getById(id));
     }
 
+    @ApiOperation("根据ID获取用户")
+    @KenLogTag("根据ID获取用户")
+    @GetMapping(value = "/api/user/{id}")
+    public CommonResult selectById2(@PathVariable int id){
+        return CommonResult.ok("获取用户成功").putDate(userService.getById(id));
+    }
+
 
 }
