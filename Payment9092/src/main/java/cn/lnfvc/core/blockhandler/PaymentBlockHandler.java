@@ -1,9 +1,7 @@
 package cn.lnfvc.core.blockhandler;
 
-import cn.lnfvc.commons.entity.CommonResult;
-import cn.lnfvc.commons.entity.User;
+import cn.lnfvc.core.pojo.CommonResult;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 
 /**

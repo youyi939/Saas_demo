@@ -1,4 +1,4 @@
-package cn.lnfvc.commons.entity;
+package cn.lnfvc.core.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

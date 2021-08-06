@@ -1,6 +1,6 @@
 package cn.lnfvc.core.service;
 
-import cn.lnfvc.commons.entity.User;
+import cn.lnfvc.core.pojo.User;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 

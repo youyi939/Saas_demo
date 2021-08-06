@@ -1,8 +1,8 @@
 package cn.lnfvc.core.controller;
 
 import cn.lnfvc.core.annotation.KenLogTag;
-import cn.lnfvc.commons.entity.CommonResult;
-import cn.lnfvc.commons.entity.User;
+import cn.lnfvc.core.pojo.CommonResult;
+import cn.lnfvc.core.pojo.User;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

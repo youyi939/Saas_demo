@@ -1,6 +1,6 @@
 package cn.lnfvc.core.service.impl;
 
-import cn.lnfvc.commons.entity.User;
+import cn.lnfvc.core.pojo.User;
 import cn.lnfvc.core.mapper.UserMapper;
 import cn.lnfvc.core.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

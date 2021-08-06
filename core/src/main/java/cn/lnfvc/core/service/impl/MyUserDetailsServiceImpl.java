@@ -1,6 +1,6 @@
 package cn.lnfvc.core.service.impl;
 
-import cn.lnfvc.core.service.UserService;
+import cn.lnfvc.core.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
@@ -9,8 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @Author: KenChen
@@ -21,11 +19,11 @@ import javax.annotation.Resource;
 public class MyUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    UserService userService;
+    SecurityService securityService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        cn.lnfvc.commons.entity.User user =userService.getByName(username);
+        cn.lnfvc.core.pojo.User user = securityService.getByName(username);
         return new User(user.getName(),new BCryptPasswordEncoder().encode(user.getPassword()), AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_vip1"));
     }
 

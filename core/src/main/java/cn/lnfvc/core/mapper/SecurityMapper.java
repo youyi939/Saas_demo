@@ -1,16 +1,15 @@
 package cn.lnfvc.core.mapper;
 
-
+import cn.lnfvc.core.pojo.KenLog;
 import cn.lnfvc.core.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @Author: KenChen
- * @Description: 用户的mapper
- * @Date: Create in  2021/7/23 下午4:37
+ * @Description:
+ * @Date: Create in  2021/8/6 下午4:34
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
-
+public interface SecurityMapper extends BaseMapper<User> {
 }
