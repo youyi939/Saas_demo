@@ -6,11 +6,15 @@ import cn.lnfvc.core.pojo.User;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,9 +36,10 @@ public class OrderController {
     @ApiOperation("Order调用根据ID获取用户接口")
     @KenLogTag("Order调用根据ID获取用户接口")
     @GetMapping(value = "/consumer/public/user/{id}")
-    public CommonResult selectById(@PathVariable int id){
-        String url = serverUrl+"/public/user/"+id;
-        return restTemplate.getForObject(url,CommonResult.class);
+        public CommonResult selectById(@PathVariable int id, HttpServletRequest request){
+            System.out.println("***********************************"+request.getHeader("name"));
+            String url = serverUrl+"/public/user/"+id;
+            return restTemplate.getForObject(url,CommonResult.class);
     }
 
     @ApiOperation("Order调用分页获取用户列表接口")

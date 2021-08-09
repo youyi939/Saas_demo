@@ -26,7 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().cors().and()
                 .authorizeRequests()
-                .antMatchers("/public/user/*").permitAll()      //游客接口允许所有人访问
+                //游客接口允许所有人访问
+                .antMatchers("/public/*").permitAll()
+                .antMatchers("/consumer/public/user/*").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -35,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilter(new JwtAuthorizationFilter(authenticationManager()))
                 .addFilter(new JwtValidationFilter(authenticationManager()))
                 .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);    //设置session失效
+                //设置session失效
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     /**
